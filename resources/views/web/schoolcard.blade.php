@@ -3,7 +3,7 @@
 <div class="item">
     <div class="wrapper">
         <div class="image">
-            <h3>{!!$school->getTags()!!}<a href="{{route('web.detail', encrypt($school->id))}}" class="title">{{$school->nama_sekolah}}</a></h3>
+            <h3>{!!$school->getTags()!!}<a href="{{route('web.detail', ($school->slug_sekolah))}}" class="title">{{$school->nama_sekolah}}</a></h3>
             <a href="#" class="image-wrapper background-image"><img src="{{$school->getPhotoCoverUrl()}}" alt=""></a>
         </div>
         <h4 class="location"><a href="#">{{$school->city_province()}}</a></h4>
@@ -14,6 +14,6 @@
         </div>
         <div class="description">
             <p>{{$school->exceprt()}}</p>
-        </div><a href="{{route('web.detail', encrypt($school->id))}}" class="detail text-caps underline">Lihat Sekolah</a></div>
+        </div><a href="{{route('web.detail', git($school->slug_sekolah))}}" class="detail text-caps underline">Lihat Sekolah</a></div>
 </div>
 @endforeach
