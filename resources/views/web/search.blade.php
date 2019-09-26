@@ -22,14 +22,17 @@
             @endif
 
             <div class="items grid grid-xl-4-items grid-lg-3-items grid-md-2-items">
+<<<<<<< HEAD
+                @component('web.schoolcard', ['schools' => $schools])@endcomponent
+=======
                 @foreach($schools as $school)
                 <div class="item">
                     <div class="wrapper">
                         <div class="image">
-                            <h3>{!!$school->getTags()!!}<a href="{{route('web.detail', encrypt($school->id))}}" class="title">{{$school->nama_sekolah}}</a></h3>
-                            <a href="#" class="image-wrapper background-image"><img src="{{$school->getPhotoCoverUrl()}}" alt=""></a>
+                            <h3>{!!$school->getTags()!!}<a href="{{route('web.detail', $school->slug_sekolah)}}" class="title">{{$school->nama_sekolah}}</a></h3>
+                            <a href="{{route('web.detail', $school->slug_sekolah)}}" class="image-wrapper background-image"><img src="{{$school->getPhotoCoverUrl()}}" alt=""></a>
                         </div>
-                        <h4 class="location"><a href="#">{{$school->city_province()}}</a></h4>
+                        <h4 class="location"><a href="{{route('web.search', ['city' => $school->city_id])}}">{{$school->city_province()}}</a></h4>
                         <div class="price">{{$school->displaySPP()}}</div>
                         <div class="meta">
                             {!!$school->getOtherFacilities()!!}
@@ -37,9 +40,10 @@
                         </div>
                         <div class="description">
                             <p>{{$school->exceprt()}}</p>
-                        </div><a href="{{route('web.detail', encrypt($school->id))}}" class="detail text-caps underline">Lihat Sekolah</a></div>
+                        </div><a href="{{route('web.detail', $school->slug_sekolah)}}" class="detail text-caps underline">Lihat Sekolah</a></div>
                 </div>
                 @endforeach
+>>>>>>> 888d243b24e5f249e983be97a567f7abf21a6b22
             </div>
         </div>
     </section>
