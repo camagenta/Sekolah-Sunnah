@@ -23,6 +23,7 @@
 
             <div class="items grid grid-xl-4-items grid-lg-3-items grid-md-2-items">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 @component('web.schoolcard', ['schools' => $schools])@endcomponent
 =======
                 @foreach($schools as $school)
@@ -44,7 +45,12 @@
                 </div>
                 @endforeach
 >>>>>>> 888d243b24e5f249e983be97a567f7abf21a6b22
+=======
+                @component('web.schoolcard', ['schools' => $schools])@endcomponent
+                
+>>>>>>> ee879ac26e3fc48f56b104f8db2a68caefc59126
             </div>
+            <div style="text-align:center">{{ $schools->links() }}</div>
         </div>
     </section>
 @endsection
